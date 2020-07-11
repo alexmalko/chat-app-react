@@ -1,0 +1,43 @@
+/* -------------------------------------------- Global ----------------------------------------------- */
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40px auto;
+  grid-template-columns: 60px 278px 3fr;
+  grid-template-areas:
+    "header header header"
+    "div1 div3 div4";
+}
+
+button {
+  cursor: pointer;
+}
+.fas {
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.far {
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+
+span {
+  padding: 5px;
+  cursor: pointer;
+}
+
+span:hover {
+  background-color: rgb(240, 236, 236);
+}
+
+span:focus {
+  background-color: rgb(240, 236, 236);
+}

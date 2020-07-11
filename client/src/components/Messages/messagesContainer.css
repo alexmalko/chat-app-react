@@ -1,0 +1,124 @@
+/* ------------------------------------Sectiion 3 ---------------------------------------------------- */
+
+.div3 {
+  background-color: rgb(250, 203, 115);
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: 50px auto 90px;
+}
+
+.div3-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: peachpuff;
+  border: 1px solid black;
+  padding-right: 8px;
+}
+
+.far.fa-circle {
+  font-size: 12px;
+}
+
+.far.fa-star {
+  font-size: 12px;
+}
+
+.fas.fa-exclamation-circle {
+  font-size: 20px;
+}
+
+.div3-2 {
+  background-color: peachpuff;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  background-color: darkcyan;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 60px auto;
+  border: 1px solid black;
+  grid-template-areas:
+    "picture status"
+    "picture message";
+  padding: 5px;
+  margin: 1px;
+}
+
+.message:hover {
+  background-color: rgb(122, 122, 122);
+}
+
+.profile-picture {
+  grid-area: picture;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+}
+
+.profile-status {
+  grid-area: status;
+  font-weight: 900;
+  border-bottom: 1px solid black;
+  padding: 2px;
+  color: white;
+}
+
+.profile-message {
+  grid-area: message;
+  /* border: 1px solid black; */
+  padding: 5px;
+  color: white;
+  padding-left: 5px;
+}
+
+.fas.fa-id-badge {
+  font-size: 40px;
+}
+
+.div3-3 {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    "input input"
+    "left right";
+  padding: 5px;
+}
+
+.message-input {
+  grid-area: input;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commands-left {
+  grid-area: left;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.commands-right {
+  grid-area: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.message-text {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+.x {
+  padding: 5px;
+}
+.x:hover {
+  background-color: rgb(240, 236, 236);
+}

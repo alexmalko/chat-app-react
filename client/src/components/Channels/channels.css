@@ -1,0 +1,56 @@
+/* -------------------------------------------Channels ---------------------------------------------- */
+.div2 {
+  background-color: rgb(250, 203, 115);
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: 50px auto;
+}
+
+.div2-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightskyblue;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.far.fa-edit {
+  font-size: 25px;
+}
+
+.channel-name {
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.div2-2 {
+  background-color: lightskyblue;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.section2-button {
+  font-size: 14px;
+  border: none;
+  background: none;
+  color: black;
+  text-align: left;
+  padding: 5px;
+  outline: none;
+}
+
+.section2-button:focus {
+  background-color: rgb(240, 236, 236);
+}
+
+.section2-button:hover {
+  background-color: rgb(240, 236, 236);
+}
+
+.channels {
+  padding: 10px;
+}

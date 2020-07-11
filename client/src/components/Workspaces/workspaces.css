@@ -1,0 +1,27 @@
+/* --------------------------------------Workspaces--------------------------------------------------- */
+/* justify-content controls where the flex items sit on the main axis. */
+/* align-items controls where the flex items sit on the cross axis. */
+.div1 {
+  background-color: rgb(250, 203, 115);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-button {
+  background-color: white;
+  text-align: center;
+  border: 1px solid black;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+}
+
+.workspace-button:hover {
+  box-shadow: 3px 3px;
+}
+
+.workspace-button:focus {
+  box-shadow: 3px 3px;
+}

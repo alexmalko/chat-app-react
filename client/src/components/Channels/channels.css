@@ -4,6 +4,8 @@
   border: 2px solid black;
   display: grid;
   grid-template-rows: 50px auto;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .div2-1 {
@@ -13,6 +15,8 @@
   background-color: lightskyblue;
   border: 1px solid black;
   cursor: pointer;
+  position: sticky;
+  top: 0;
 }
 
 .far.fa-edit {

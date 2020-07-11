@@ -5,6 +5,8 @@
   border: 2px solid black;
   display: grid;
   grid-template-rows: 50px auto 90px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .div3-1 {
@@ -14,6 +16,8 @@
   background-color: peachpuff;
   border: 1px solid black;
   padding-right: 8px;
+  position: sticky;
+  top: 0;
 }
 
 .far.fa-circle {
@@ -87,6 +91,9 @@
     "input input"
     "left right";
   padding: 5px;
+  position: sticky;
+  bottom: 0;
+  background-color: rgb(250, 203, 115);
 }
 
 .message-input {

@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 /* font awesome icons */
 /* selecting class with spaces */

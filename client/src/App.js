@@ -1,18 +1,19 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Channels from "./components/Channels/Channels";
-import Workspaces from "./components/Workspaces/Workspaces";
-import Messages from "./components/Messages/MessagesContainer";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Chat from "./components/Chat";
+import Demo from "./Demo";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Channels />
-      <Workspaces />
-      <Messages />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Chat} />
+          <Route exact path="/demo" component={Demo} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

@@ -69,6 +69,13 @@
   border-bottom: 1px solid black;
   padding: 2px;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fas.fa-trash {
+  color: red;
 }
 
 .profile-message {
@@ -101,6 +108,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.message-form {
+  width: 100%;
 }
 
 .commands-left {

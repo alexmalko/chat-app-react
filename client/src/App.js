@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
 import Chat from "./components/Chat";
 import Demo from "./Demo";
 
@@ -17,5 +18,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default connect(null)(App);

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import useInputState from "./useInputState";
+import { connect } from "react-redux";
+import { addPost } from "../../actions/post";
 
-export default function Notes({ addTodo }) {
-  const [value, handleChange, reset] = useInputState("");
+function Notes({ addPost }) {
+  // const [value, handleChange, reset] = useInputState("");
+  const [text, setText] = useState("");
+
   return (
     <div className="div3-3">
       <div className="message-input">
@@ -10,16 +14,16 @@ export default function Notes({ addTodo }) {
           className="message-form"
           onSubmit={(e) => {
             e.preventDefault();
-            addTodo(value);
-            reset();
+            addPost({ text });
+            setText("");
           }}
         >
           <input
             className="message-text"
             type="text"
             placeholder="Jot something down"
-            value={value}
-            onChange={handleChange}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
           />
         </form>
       </div>
@@ -41,3 +45,5 @@ export default function Notes({ addTodo }) {
     </div>
   );
 }
+
+export default connect(null, { addPost })(Notes);

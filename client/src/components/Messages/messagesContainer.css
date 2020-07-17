@@ -78,6 +78,10 @@
   color: red;
 }
 
+.divdiv {
+  background-color: blue;
+}
+
 .profile-message {
   grid-area: message;
   /* border: 1px solid black; */

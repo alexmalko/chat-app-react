@@ -77,50 +77,68 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// // @route    GET api/posts/:id
-// // @desc     Get post by ID
-// // @access   Private
-// router.get('/:id', [ auth, checkObjectId('id') ], async (req, res) => {
-// 	try {
-// 		const post = await Post.findById(req.params.id);
+// @route    GET api/posts/:id
+// @desc     Get post by ID
+// @access   Private
+router.get("/:id", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
 
-// 		res.json(post);
-// 	} catch (err) {
-// 		console.error(err.message);
+    res.json(post);
+  } catch (err) {
+    console.error(err.message);
 
-// 		res.status(500).send('Server Error');
-// 	}
-// });
+    res.status(500).send("Server Error");
+  }
+});
+
+// @desc    Update message
+// @route   PUT /stories/:id
+router.put("/:id", async (req, res) => {
+  try {
+    let post = await Post.findById(req.params.id);
+
+    post = await Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    res.json(post);
+  } catch (err) {
+    console.error(err);
+    return res.render("error/500");
+  }
+});
 
 // // @route    PUT api/posts/like/:id
 // // @desc     Like a post
 // // @access   Private
 // router.put(
-// 	'/like/:id',
-// 	[
-// 		auth,
-// 		// check if id is an object
-// 		checkObjectId('id')
-// 	],
-// 	async (req, res) => {
-// 		try {
-// 			const post = await Post.findById(req.params.id);
+//   "/like/:id",
+//   [
+//     auth,
+//     // check if id is an object
+//     checkObjectId("id"),
+//   ],
+//   async (req, res) => {
+//     try {
+//       const post = await Post.findById(req.params.id);
 
-// 			// Check if the post has already been liked
-// 			if (post.likes.some((like) => like.user.toString() === req.user.id)) {
-// 				return res.status(400).json({ msg: 'Post already liked' });
-// 			}
+//       // Check if the post has already been liked
+//       if (post.likes.some((like) => like.user.toString() === req.user.id)) {
+//         return res.status(400).json({ msg: "Post already liked" });
+//       }
 
-// 			post.likes.unshift({ user: req.user.id });
+//       post.likes.unshift({ user: req.user.id });
 
-// 			await post.save();
+//       await post.save();
 
-// 			return res.json(post.likes);
-// 		} catch (err) {
-// 			console.error(err.message);
-// 			res.status(500).send('Server Error');
-// 		}
-// 	}
+//       return res.json(post.likes);
+//     } catch (err) {
+//       console.error(err.message);
+//       res.status(500).send("Server Error");
+//     }
+//   }
 // );
 
 // // @route    PUT api/posts/unlike/:id

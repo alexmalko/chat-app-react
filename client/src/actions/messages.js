@@ -1,24 +1,24 @@
 import api from "../utils/api";
 import axios from "axios";
-// import { setAlert } from './alert';
+
 import {
-  GET_POSTS,
+  GET_MESSAGES,
   POST_ERROR,
   UPDATE_LIKES,
   DELETE_POST,
-  ADD_POST,
+  ADD_MESSAGE,
   GET_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
 } from "./types";
 
 // // Get posts.
-export const getPosts = () => async (dispatch) => {
+export const getMessages = () => async (dispatch) => {
   try {
     const res = await axios.get("http://localhost:5000/api/posts");
 
     dispatch({
-      type: GET_POSTS,
+      type: GET_MESSAGES,
       payload: res.data,
     });
   } catch (err) {
@@ -30,12 +30,12 @@ export const getPosts = () => async (dispatch) => {
 };
 
 // Add post
-export const addPost = (formData) => async (dispatch) => {
+export const addMessage = (formData) => async (dispatch) => {
   try {
     const res = await axios.post("http://localhost:5000/api/posts", formData);
 
     dispatch({
-      type: ADD_POST,
+      type: ADD_MESSAGE,
       payload: res.data,
     });
 
@@ -59,6 +59,43 @@ export const deletePost = (id) => async (dispatch) => {
     });
 
     // dispatch(setAlert("Post Removed", "success"));
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+// Get post by id
+export const getPost = (id) => async (dispatch) => {
+  try {
+    const res = await api.get(`http://localhost:5000/api/posts/${id}`);
+
+    dispatch({
+      type: GET_POST,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+// Update post
+export const updatePost = (id, formData) => async (dispatch) => {
+  try {
+    const res = await api.put(
+      `http://localhost:5000/api/posts/${id}`,
+      formData
+    );
+
+    dispatch({
+      type: GET_POST,
+      payload: res.data,
+    });
   } catch (err) {
     dispatch({
       type: POST_ERROR,
@@ -92,23 +129,6 @@ export const deletePost = (id) => async (dispatch) => {
 //     dispatch({
 //       type: UPDATE_LIKES,
 //       payload: { id, likes: res.data },
-//     });
-//   } catch (err) {
-//     dispatch({
-//       type: POST_ERROR,
-//       payload: { msg: err.response.statusText, status: err.response.status },
-//     });
-//   }
-// };
-
-// // Get post
-// export const getPost = (id) => async (dispatch) => {
-//   try {
-//     const res = await api.get(`/posts/${id}`);
-
-//     dispatch({
-//       type: GET_POST,
-//       payload: res.data,
 //     });
 //   } catch (err) {
 //     dispatch({

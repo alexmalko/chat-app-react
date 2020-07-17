@@ -1,9 +1,9 @@
 import {
-  GET_POSTS,
+  GET_MESSAGES,
   POST_ERROR,
   UPDATE_LIKES,
   DELETE_POST,
-  ADD_POST,
+  ADD_MESSAGE,
   GET_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
@@ -20,7 +20,7 @@ export default function (state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case GET_POSTS:
+    case GET_MESSAGES:
       return {
         ...state,
         posts: payload,
@@ -32,7 +32,7 @@ export default function (state = initialState, action) {
         post: payload,
         loading: false,
       };
-    case ADD_POST:
+    case ADD_MESSAGE:
       return {
         ...state,
         posts: [payload, ...state.posts],

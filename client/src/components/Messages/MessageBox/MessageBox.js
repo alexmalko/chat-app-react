@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import useInputState from "./useInputState";
 import { connect } from "react-redux";
-import { addPost } from "../../actions/post";
+import { addMessage } from "../../../actions/messages";
 
-function Notes({ addPost }) {
-  // const [value, handleChange, reset] = useInputState("");
+function Notes({ addMessage }) {
   const [text, setText] = useState("");
 
   return (
@@ -14,7 +12,7 @@ function Notes({ addPost }) {
           className="message-form"
           onSubmit={(e) => {
             e.preventDefault();
-            addPost({ text });
+            addMessage({ text });
             setText("");
           }}
         >
@@ -46,4 +44,4 @@ function Notes({ addPost }) {
   );
 }
 
-export default connect(null, { addPost })(Notes);
+export default connect(null, { addMessage })(Notes);

@@ -1,10 +1,11 @@
 import React from "react";
+import File from "./File";
 import "./navbar.css";
 
 export default function header() {
   return (
     <div className="Navbar">
-      <i className="fas fa-bars"></i>
+      <File />
       <div className="icons">
         <i className="fas fa-arrow-left"></i>
         <i className="fas fa-arrow-right"></i>

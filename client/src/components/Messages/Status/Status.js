@@ -1,4 +1,5 @@
 import React from "react";
+import Drawer from "./Drawer";
 
 export default function Status() {
   return (
@@ -7,7 +8,7 @@ export default function Status() {
         <i className="far fa-circle"></i>Alex Malko
         <i className="far fa-star"></i>
       </p>
-      <i className="fas fa-exclamation-circle"></i>
+      <Drawer />
     </div>
   );
 }
